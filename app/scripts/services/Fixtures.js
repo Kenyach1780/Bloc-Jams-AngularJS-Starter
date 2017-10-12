@@ -32,11 +32,20 @@ var albumMarconi = {
     ]
 };
         
+        Fixtures.getCollection = function(numberOfAlbums) {
+            var array = [];
+            for (var i = 0; i < array.length; i++) {
+            array.push(albums.albumData);
+            }
+            return array;
+        }
+        
         Fixtures.getAlbum = function() {
             return albumPicasso;
         };
         
         return Fixtures;
+        
     }
     
     angular
