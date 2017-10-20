@@ -38,7 +38,7 @@
         * @param {Object} song 
         */
         var playSong = function(song) {
-            if (currentBuzzObject !== song) {
+            if (currentBuzzObject) {
                 currentBuzzObject.play();
                 song.playing = true;
             }
