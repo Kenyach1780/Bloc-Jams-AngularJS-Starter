@@ -108,11 +108,12 @@
             currentSongIndex--;
             
             if (currentSongIndex < 0) {
-                stopSong(song);
+                stopSong(SongPlayer.currentSong);
             } else {
                 var song = currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
+                
             }
         };
         
@@ -125,12 +126,11 @@
             currentSongIndex++;
             
             if (currentSongIndex >= currentAlbum.songs.length) {
-                stopSong(SongPlayer.currentSong);
-            } else {
+                currentSongIndex = 0;
+            }
                 var song = currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
-            }
         };
             
         return SongPlayer;
