@@ -6,7 +6,7 @@
         * @desc Loads album information
         * @type {Object}
         */
-        var currentAlbum = Fixtures.getAlbum();
+        SongPlayer.currentAlbum = Fixtures.getAlbum();
         
         /**
         * @desc Buzz object audio file
@@ -68,7 +68,7 @@
         * @param {Object} song
         */
         var getSongIndex = function(song) {
-            return currentAlbum.songs.indexOf(song);
+            return SongPlayer.currentAlbum.songs.indexOf(song);
         };
         
         /**
@@ -128,7 +128,7 @@
             if (currentSongIndex < 0) {
                 stopSong(SongPlayer.currentSong);
             } else {
-                var song = currentAlbum.songs[currentSongIndex];
+                var song = SongPlayer.currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
                 
@@ -146,7 +146,7 @@
             if (currentSongIndex >= currentAlbum.songs.length) {
                 currentSongIndex = 0;
             }
-                var song = currentAlbum.songs[currentSongIndex];
+                var song = SongPlayer.currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
         };
